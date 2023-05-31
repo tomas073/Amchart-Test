@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>AmCharts</title>
+  
+  <script src="https://cdn.amcharts.com/lib/version/5.3.12/index.js"></script>
+  <script src="https://cdn.amcharts.com/lib/version/5.3.12/themes/Animated.js"></script>
+  <script src="https://cdn.amcharts.com/lib/version/5.3.12/locales/de_DE.js"></script>
+  <script src="https://cdn.amcharts.com/lib/version/5.3.12/xy.js"></script>
+  
+  <script type="module" src="js/modules/utils.js"></script>
+  <script type="module" src="js/charts/barchart.js"></script>
+  <script type="module" src="js/charts/piechart.js"></script> 
+  <script type="module" src="js/main.js"></script>
+
+  <link rel="icon" href="images/amchartsicon.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="./css/styles.css">
+
+</head>
+<body>
+  <div id="barchartdiv" class="chart-container"></div>
+  <div id="piechartdiv" class="chart-container"></div>
+  
+  <select id="chartOptions">
+    <option value="barchart">Gráfico de barras</option>
+    <option value="piechart">Gráfico circular</option>
+  </select>
+  
+</body>
+</html>
+
