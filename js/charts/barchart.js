@@ -1,6 +1,6 @@
 import { setThemes, addCursor, loadDataFromJson } from "../modules/utils.js";
 
-function createBarChart() {
+export function createBarChart() {
   // Create root element
   console.log("Creating root element");
   var root = am5.Root.new("barchartdiv");
@@ -86,11 +86,6 @@ function createBarChart() {
       chart.appear(1000, 100);
     });
 }
-
-console.log("Ready function called");
-am5.ready(function() {
-  createBarChart();
-});
 
 
 

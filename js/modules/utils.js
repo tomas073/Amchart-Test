@@ -3,7 +3,7 @@ export function setThemes(root) {
   root.setThemes([
     am5themes_Animated.new(root)
   ]);
-  console.log("Objeto root:", root);
+  console.log("Objeto root: themas:", root);
 }
 
 // Add cursor
