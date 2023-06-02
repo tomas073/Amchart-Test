@@ -17,21 +17,5 @@ export function addCursor(chart) {
   }
 }
 
-// Función para cargar los datos desde un archivo JSON
-export function loadDataFromJson() {
-  return   fetch("/data/data.json")
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(data) {
-      console.log("Objeto json:", data);
-      return data;
-    })
-    .catch(function(error) {
-      console.error("Error loading data:", error);
-    });
-}
-
-
   
   

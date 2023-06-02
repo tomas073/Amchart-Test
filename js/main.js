@@ -1,6 +1,5 @@
-import { createBarChart } from "../js/charts/barchart.js";
 import { createPieChart } from "../js/charts/piechart.js";
-import { createChartDiv } from "../prueba/chartdiv.js";
+import { createBarChart } from "../js/charts/barchart.js";
 
 var dataUrl = "../data/data.json";
 
@@ -11,12 +10,10 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Opción seleccionada:", this.value);
   
     var selectedOption = this.value;
-    if (selectedOption === "barchartdiv") {
-      createBarChart();
-    } else if (selectedOption === "piechartdiv") {
+    if (selectedOption === "piechartdiv") {
       createPieChart();
-    } else if (selectedOption === "chartdiv") {
-      createChartDiv();
+    } else if (selectedOption === "barchartdiv") {
+      createBarChart();
     }    
   });
 
