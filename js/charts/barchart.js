@@ -4,7 +4,7 @@ export function createBarChart() {
   am5.ready(function() {
 
     // Create root element
-    var root = am5.Root.new("barchartdiv");
+    var root = am5.Root.new("chartContainer");
 
       // Set themes
       setThemes(root);
@@ -102,4 +102,5 @@ export function createBarChart() {
         console.error("Error loading data:", error);
       });
   });
+  return barChart;
 }

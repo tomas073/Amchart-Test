@@ -1,10 +1,9 @@
 import { setThemes, addCursor } from "../modules/utils.js";
 
 export function createPieChart() {
-  console.log("piechart");
   am5.ready(function() {
     // Create root element
-    var root = am5.Root.new("piechartdiv");
+    var root = am5.Root.new("chartContainer");
 
     // Set themes
     setThemes(root);
@@ -48,7 +47,6 @@ export function createPieChart() {
       .catch(function(error) {
         console.error("Error loading data:", error);
       });
-
-    setCurrentChart(chart);
   });
+  return pieChart;
 }

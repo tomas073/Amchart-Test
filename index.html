@@ -20,14 +20,16 @@
 
 </head>
 <body>
-  <div id="barchartdiv" class="chart-container"></div>
-  <div id="piechartdiv" class="chart-container"></div>
+  <div id="chartContainer" class="chart-container"></div>
   
-  <select id="chartOptions">
-    <option value="barchartdiv">Grafico de barras</option>
-    <option value="piechartdiv">Gráfico circular</option>
-  </select>
-  
+  <div id="chartOptionsContainer">
+    <label for="chartOptions">Seleccionar tipo de gráfico:</label>
+    <select id="chartOptions">
+      <option value="barchart">Gráfico de barras</option>
+      <option value="piechart">Gráfico circular</option>
+    </select>
+  </div>
 </body>
+
 </html>
 
