@@ -2,13 +2,12 @@ import { setThemes, addCursor, } from "../modules/utils.js";
 
 export function createBarChart() {
   am5.ready(function() {
+
     // Create root element
     var root = am5.Root.new("barchartdiv");
 
-    // Set themes
-    root.setThemes([
-      am5themes_Animated.new(root)
-    ]);
+      // Set themes
+      setThemes(root);
 
     // Create chart
     var chart = root.container.children.push(am5xy.XYChart.new(root, {
@@ -20,8 +19,7 @@ export function createBarChart() {
     }));
 
     // Add cursor
-    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
-    cursor.lineY.set("visible", false);
+    addCursor(root, chart);
 
     // Create axes
     var xRenderer = am5xy.AxisRendererX.new(root, { minGridDistance: 30 });

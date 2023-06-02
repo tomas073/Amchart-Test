@@ -7,8 +7,8 @@ export function setThemes(root) {
 }
 
 // Add cursor
-export function addCursor(chart) {
-  var cursor = chart.set("cursor", am5xy.XYCursor.new(chart.parent, {}));
+export function addCursor(root, chart) {
+  var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
   if (cursor) {
     cursor.lineY.set("visible", false);
     console.log("Objeto cursor:", cursor);
@@ -16,6 +16,3 @@ export function addCursor(chart) {
     console.error("Error: Cursor not defined");
   }
 }
-
-  
-  
