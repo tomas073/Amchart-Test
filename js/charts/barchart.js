@@ -1,4 +1,4 @@
-import { setThemes, addCursor, } from "../modules/utils.js";
+import { setThemes, addCursor } from "../modules/utils.js";
 
 export function createBarChart() {
   // Elimina (si existe) el gráfico existente antes de crear uno nuevo
@@ -10,11 +10,11 @@ export function createBarChart() {
   return new Promise((resolve, reject) => {
   am5.ready(function() {
 
-    // Create root element
+    // Crear elemento root
     var root = am5.Root.new("chartContainer");
 
-      // Set themes
-      setThemes(root);
+    // Set themes
+    setThemes(root);
 
     // Create chart
     var chart = root.container.children.push(am5xy.XYChart.new(root, {
@@ -77,7 +77,7 @@ export function createBarChart() {
       return chart.get("colors").getIndex(series.columns.indexOf(target));
     });
 
-    // Load data from JSON file
+    // Carga de datos desde JSON
     fetch("/data/data.json")
       .then(function(response) {
         console.log("JSON request successful");

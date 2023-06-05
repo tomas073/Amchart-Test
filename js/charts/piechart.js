@@ -1,15 +1,15 @@
-import { setThemes, addCursor } from "../modules/utils.js";
+import { setThemes } from "../modules/utils.js";
 
 export function createPieChart() {
   // Elimina (si existe) el gráfico existente antes de crear uno nuevo
-  am5.array.each(am5.registry.rootElements, function(root) {
+  am5.array.each(am5.registry.rootElements, function (root) {
     if (root.dom.id === "chartContainer") {
       root.dispose();
     }
   });
   return new Promise((resolve, reject) => {
-    am5.ready(function() {
-      // Create root element
+    am5.ready(function () {
+      // Crear elemento root
       var root = am5.Root.new("chartContainer");
 
       // Set themes
@@ -35,13 +35,13 @@ export function createPieChart() {
         endAngle: -90
       });
 
-      // Load data from JSON file
+      // Carga de datos desde JSON
       fetch("/data/data.json")
-        .then(function(response) {
+        .then(function (response) {
           console.log("JSON request successful");
           return response.json();
         })
-        .then(function(jsonData) {
+        .then(function (jsonData) {
           console.log("JSON data loaded:", jsonData);
 
           console.log("JSON data:", jsonData);
@@ -56,7 +56,7 @@ export function createPieChart() {
             type: "piechart"
           });
         })
-        .catch(function(error) {
+        .catch(function (error) {
           console.error("Error loading data:", error);
           reject(error);
         });

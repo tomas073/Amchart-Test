@@ -1,4 +1,8 @@
-.chart-container {
-  width: 100%;
-  height: 500px;
-}
+/* styles.css */
+
+@import 'fonts.css';
+@import 'layout.css';
+@import 'chart-styles.css';
+@import 'common-styles.css';
+@import 'OptionsContainer-styles.css';
+

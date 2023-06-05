@@ -29,4 +29,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
   console.log("Fin del archivo main.js");
 });
-

@@ -1,0 +1,15 @@
+.OptionsContainer {
+    text-align: right; /* Alinea el contenido a la derecha */
+    margin-bottom: 20px; /* Agrega un margen inferior para separarlo del contenido */
+  }
+  
+  .OptionsContainer label {
+    font-weight: bold; /* Añade negrita al texto del label */
+    margin-right: 10px; /* Agrega un margen derecho para separarlo del select */
+  }
+  
+  .OptionsContainer select {
+    padding: 5px 10px; /* Ajusta el espaciado interno del select */
+    width: 200px; /* Ajusta el ancho del select */
+  }
+  

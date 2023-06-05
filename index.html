@@ -9,6 +9,7 @@
   <script src="https://cdn.amcharts.com/lib/version/5.3.12/locales/de_DE.js"></script>
   <script src="https://cdn.amcharts.com/lib/version/5.3.12/xy.js"></script>
   <script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+  <script src="https://cdn.amcharts.com/lib/5/plugins/exporting.js"></script>
   
   <script type="module" src="js/modules/utils.js"></script>
   <script type="module" src="js/charts/barchart.js"></script>
@@ -20,14 +21,15 @@
 
 </head>
 <body>
-  <div id="chartContainer" class="chart-container"></div>
-  
-  <div id="chartOptionsContainer">
+  <div id="OptionsContainer">
     <label for="chartOptions">Seleccionar tipo de gráfico:</label>
     <select id="chartOptions">
       <option value="barchart">Gráfico de barras</option>
-      <option value="piechart">Gráfico circular</option>
+      <option value="piechart">Gráfico de torta</option>
     </select>
+
+    <div id="chartContainer" class="chart-container"></div>
+
   </div>
 </body>
 
