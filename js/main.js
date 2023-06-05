@@ -1,9 +1,6 @@
 import { createPieChart } from "../js/charts/piechart.js";
 import { createBarChart } from "../js/charts/barchart.js";
 
-var dataUrl = "../data/data.json";
-var currentChart = null; // Almacena el gráfico actual
-
 document.addEventListener("DOMContentLoaded", function() {
   console.log("Inicio del archivo main.js");
 
@@ -11,18 +8,25 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Opción seleccionada:", this.value);
 
     var selectedOption = this.value;
+    // Seleccionar el contenedor de gráficos
+    var chartContainer = document.querySelector(".chart-container"); 
 
-    if (currentChart) {
-      console.log("GRAFICO DESTRUIDO");
-      currentChart.destroy(); // Eliminar el gráfico existente antes de crear uno nuevo
-      currentChart = null; 
-    }
     if (selectedOption === "piechart") {
-      currentChart = createPieChart(); // Crear gráfico
+      createPieChart(chartContainer).then(function(chartData) {
+        // Obtener el objeto chart si lo necesitas
+        var currentChart = chartData.chart;
+      }).catch(function(error) {
+        console.error("Error al crear el gráfico de torta:", error);
+      });
     } else if (selectedOption === "barchart") {
-      currentChart = createBarChart(); 
+      createBarChart(chartContainer).then(function(chartData) {
+        var currentChart = chartData.chart;
+      }).catch(function(error) {
+        console.error("Error al crear el gráfico de barras:", error);
+      });
     }
   });
 
   console.log("Fin del archivo main.js");
 });
+

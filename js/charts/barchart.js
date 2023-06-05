@@ -1,6 +1,13 @@
 import { setThemes, addCursor, } from "../modules/utils.js";
 
 export function createBarChart() {
+  // Elimina (si existe) el gráfico existente antes de crear uno nuevo
+  am5.array.each(am5.registry.rootElements, function(root) {
+    if (root.dom.id === "chartContainer") {
+      root.dispose();
+    }
+  });
+  return new Promise((resolve, reject) => {
   am5.ready(function() {
 
     // Create root element
@@ -97,10 +104,15 @@ export function createBarChart() {
         series.appear(1000);
         chart.appear(1000, 100);
 
+        resolve({
+          chart: chart,
+          type: "barchart"
+        });
+
       })
       .catch(function(error) {
         console.error("Error loading data:", error);
       });
   });
-  return barChart;
+});
 }
